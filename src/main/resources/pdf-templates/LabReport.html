@@ -1,12 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello, this is template and I am changing something.</h1>
-    <img src="logo.png" alt="logo" style="width: 100px; height: 100px;"> </img>
-</body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test Hospital Lab Report</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{http://www.example.com/styles.css}"
+    />
+
+    <style type="text/css">
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .logo {
+        height: 100px;
+        width: 100px;
+        text-align: right;
+        position: absolute;
+        top: 20px;
+        right: 0;
+      }
+
+      .hospital-name {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .address,
+      .contact-info {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      main {
+        text-align: center;
+        flex: 1;
+      }
+
+      .report-details {
+        text-align: left;
+      }
+
+      .report-title {
+        margin-top: 20px;
+      }
+      .left {
+        text-align: left;
+      }
+      .right {
+        position: absolute;
+        top: 175px;
+        right: 100px;
+      }
+
+      .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      .date {
+        text-align: left;
+      }
+
+      .powered {
+        text-align: left;
+      }
+
+      .page {
+        text-align: right;
+        position: relative;
+        top: -35px;
+      }
+
+      .report-table th,
+      .report-table td {
+        border: 2px solid black;
+        padding: 8px;
+        text-align: left;
+        background-color: transparent;
+      }
+
+      .report-table th {
+        background-color: white;
+      }
+
+      .patient-info {
+        display: flex;
+        justify-content: space-between;
+      }
+      .ft {
+        margin-top: 290px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-info">
+      <h1 class="hospital-name">Test Hospital</h1>
+      <p class="address">
+        Imperial Paradise, Panthur, Bellandur, Karanataka, India, 560103
+      </p>
+      <p class="contact-info">
+        Phone: 1800-123-123, 888888888, 9428458865 | Email: hospital@test.com
+      </p>
+    </div>
+    <img class="logo" src="logo.png" alt="Test Hospital Logo" />
+
+    <main>
+      <h2 class="section-title">Lab Report</h2>
+      <div class="patient-info">
+        <div class="left">
+          // Here we Add All the info of lab report
+          <p>MRD No: <span th:text="${MRD}"></span></p>
+          <p>Contact Number: <span th:text="${contactNumber}"></span></p>
+          <p>
+            Requested Doctor's Name:
+            <span th:text="${requestedDoctorName}"></span>
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            Patient: <span th:text="${patientName}"></span>/ Age:
+            <span th:text="${patientAge}"></span>/ Gender:
+            <span th:text="${patientGender}"></span>
+          </p>
+          <p>Address: <span th:text="${patientAddress}">krngrk</span></p>
+          <p>Appointment ID: <span th:text="${appointmentID}"></span></p>
+        </div>
+      </div>
+
+      <div class="report-details">
+        <h3 class="report-title">BP Report</h3>
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="bpRow : ${bpReportRows}">
+              <td th:text="${bpRow.column1}"></td>
+              // Bp row
+              <td th:text="${bpRow.column2}"></td>
+              <td th:text="${bpRow.column3}"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="report-title">Thyroid Report</h3>
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="thyroidRow : ${thyroidReportRows}">
+              //Here thyroid row
+              <td th:text="${thyroidRow.column1}"></td>
+              <td th:text="${thyroidRow.column2}"></td>
+              <td th:text="${thyroidRow.column3}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+
+    // Footer 
+    <div class="ft">
+      <p class="date">Date: <span th:text="${date}"></span></p>
+      <hr />
+      <p class="powered">Powered By: FlexEHR Healthcare Private limited.</p>
+      <p class="page">
+        Page <span th:text="${pageNumber}"></span> out of
+        <span th:text="${totalPages}"></span>
+      </p>
+    </div>
+  </body>
 </html>
