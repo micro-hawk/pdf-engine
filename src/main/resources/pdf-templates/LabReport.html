@@ -97,7 +97,7 @@
         justify-content: space-between;
       }
       .ft {
-        margin-top: 290px;
+        margin-top: 285px;
       }
     </style>
   </head>
@@ -117,7 +117,7 @@
       <h2 class="section-title">Lab Report</h2>
       <div class="patient-info">
         <div class="left">
-          // Here we Add All the info of lab report
+
           <p>MRD No: <span th:text="${MRD}"></span></p>
           <p>Contact Number: <span th:text="${contactNumber}"></span></p>
           <p>
@@ -141,9 +141,9 @@
         <table class="report-table">
           <thead>
             <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
+              <th>Parameters </th>
+              <th>Observed Value</th>
+              <th>Normal Value</th>
             </tr>
           </thead>
           <tbody>
@@ -160,9 +160,9 @@
         <table class="report-table">
           <thead>
             <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
+              <th>Parameters</th>
+              <th>Observed Value</th>
+              <th>Normal Value </th>
             </tr>
           </thead>
           <tbody>
@@ -178,7 +178,6 @@
     </main>
 
 
-    // Footer 
     <div class="ft">
       <p class="date">Date: <span th:text="${date}"></span></p>
       <hr />
