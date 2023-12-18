@@ -178,7 +178,7 @@
     </main>
 
 
-    <div class="ft">
+    <div class="ft" th:if="${pageNumber} == ${totalPages}">
       <p class="date">Date: <span th:text="${date}"></span></p>
       <hr />
       <p class="powered">Powered By: FlexEHR Healthcare Private limited.</p>
