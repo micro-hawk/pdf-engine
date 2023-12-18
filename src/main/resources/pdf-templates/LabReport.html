@@ -117,7 +117,6 @@
       <h2 class="section-title">Lab Report</h2>
       <div class="patient-info">
         <div class="left">
-
           <p>MRD No: <span th:text="${MRD}"></span></p>
           <p>Contact Number: <span th:text="${contactNumber}"></span></p>
           <p>
@@ -141,7 +140,7 @@
         <table class="report-table">
           <thead>
             <tr>
-              <th>Parameters </th>
+              <th>Parameters</th>
               <th>Observed Value</th>
               <th>Normal Value</th>
             </tr>
@@ -162,12 +161,11 @@
             <tr>
               <th>Parameters</th>
               <th>Observed Value</th>
-              <th>Normal Value </th>
+              <th>Normal Value</th>
             </tr>
           </thead>
           <tbody>
             <tr th:each="thyroidRow : ${thyroidReportRows}">
-              //Here thyroid row
               <td th:text="${thyroidRow.column1}"></td>
               <td th:text="${thyroidRow.column2}"></td>
               <td th:text="${thyroidRow.column3}"></td>
@@ -177,15 +175,17 @@
       </div>
     </main>
 
+    <div class="ft"> <p th:if="${pageNumber} == ${totalPages}" class="date">
+      Date: <span th:text="${date}"></span>
+    </p>
+    <hr th:if="${pageNumber} == ${totalPages}" />
 
-    <div class="ft" th:if="${pageNumber} == ${totalPages}">
-      <p class="date">Date: <span th:text="${date}"></span></p>
-      <hr />
-      <p class="powered">Powered By: FlexEHR Healthcare Private limited.</p>
-      <p class="page">
-        Page <span th:text="${pageNumber}"></span> out of
-        <span th:text="${totalPages}"></span>
-      </p>
+   
+    <p class="powered">Powered By: FlexEHR Healthcare Private limited.</p>
+    <p class="page">
+      Page <span th:text="${pageNumber}"></span> out of
+      <span th:text="${totalPages}"></span>
+    </p>
     </div>
   </body>
 </html>
