@@ -1,6 +1,5 @@
 package com.example.demo.service.impl;
 
-
 import com.example.demo.service.api.LabReportService;
 import com.lowagie.text.DocumentException;
 
@@ -20,8 +19,7 @@ import org.xhtmlrenderer.pdf.ITextRenderer;
 
 @Service
 @Slf4j
-public class LabReportServiceImpl implements LabReportService{
-
+public class LabReportServiceImpl implements LabReportService {
 
     @Autowired
     SpringWebFluxTemplateEngine templateEngine;
@@ -32,7 +30,6 @@ public class LabReportServiceImpl implements LabReportService{
         String html = loadAndFillTemplate(context);
         return renderPdf(html);
     }
-
 
     private static final String PDF_RESOURCES = "/pdf-templates/";
 
@@ -49,10 +46,19 @@ public class LabReportServiceImpl implements LabReportService{
         return Files.readAllBytes(file.toPath());
     }
 
-
     private Context getContext() {
         Context context = new Context();
-        context.setVariable("to", "FlexEHR");
+        context.setVariable("MRD_NUMBER", "MRD875JHVS");
+        context.setVariable("MOBILE_NUMBER", "7043400140");
+        context.setVariable("DOCTOR_NAME", "DR. Doctor Das");
+        context.setVariable("PATIENT_FULL_NAME", "MR. Vikas Das");
+        context.setVariable("AGE", "22");
+        context.setVariable("GENDER", "MALE");
+        context.setVariable("PATIENT_ADDRESS", "C Parth City, Ucharpi Road, Near Kunal Arc, Mehsana");
+        context.setVariable("APPOINTMENT_ID", "SKR78253JS");
+
+        context.setVariable("PDF_DATE", "16/12/2023");
+
         return context;
     }
 

@@ -66,20 +66,6 @@
         margin-top: 20px;
       }
 
-      .date {
-        text-align: left;
-      }
-
-      .powered {
-        text-align: left;
-      }
-
-      .page {
-        text-align: right;
-        position: relative;
-        top: -35px;
-      }
-
       .report-table th,
       .report-table td {
         border: 2px solid black;
@@ -96,12 +82,58 @@
         display: flex;
         justify-content: space-between;
       }
-      .ft {
-        margin-top: 285px;
+
+      .footer {
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin-top: 285px;
+        }
+
+      .date {
+        text-align: left;
       }
+
+      .footer-description {
+        text-align: left;
+      }
+
+      .page {
+        text-align: right;
+        position: relative;
+        top: -35px;
+      }
+
+      .date {
+            display: none;
+        }
+
+        .pageNumber:before {
+            content: counter(page);
+        }
+
+        .totalPages:before {
+            content: counter(pages);
+        }
+
     </style>
+
+<!-- <script th:inline="javascript">
+  /* JavaScript to show the date on the last page */
+  var isLastPage = `/*[(${pageNumber} == ${totalPages})]*/` false;
+
+  if (isLastPage) {
+      document.addEventListener('DOMContentLoaded', function () {
+          document.querySelector('.date').style.display = 'inline';
+      });
+  }
+</script> -->
+
   </head>
   <body>
+
+    <!-- HOSPITAL HEADER -->
     <div class="header-info">
       <h1 class="hospital-name">Test Hospital</h1>
       <p class="address">
@@ -112,26 +144,25 @@
       </p>
     </div>
     <img class="logo" src="logo.png" alt="Test Hospital Logo" />
+    <hr />
 
     <main>
-      <h2 class="section-title">Lab Report</h2>
+      <h2 class="section-title"><u>Lab Report</u></h2>
       <div class="patient-info">
         <div class="left">
-          <p>MRD No: <span th:text="${MRD}"></span></p>
-          <p>Contact Number: <span th:text="${contactNumber}"></span></p>
-          <p>
-            Requested Doctor's Name:
-            <span th:text="${requestedDoctorName}"></span>
-          </p>
+          <!-- Here we Add All the info of lab report -->
+          <p>MRD No: <span th:text="${MRD_NUMBER}"></span></p>
+          <p>Contact Number: <span th:text="${MOBILE_NUMBER}"></span></p>
+          <p>Requested Doctor's Name:<span th:text="${DOCTOR_NAME}"></span></p>
         </div>
         <div class="right">
           <p>
-            Patient: <span th:text="${patientName}"></span>/ Age:
-            <span th:text="${patientAge}"></span>/ Gender:
-            <span th:text="${patientGender}"></span>
+            Patient: <span th:text="${PATIENT_FULL_NAME}"></span>/ 
+            Age: <span th:text="${AGE}"></span>/ Gender:
+            <span th:text="${GENDER}"></span>
           </p>
-          <p>Address: <span th:text="${patientAddress}">krngrk</span></p>
-          <p>Appointment ID: <span th:text="${appointmentID}"></span></p>
+          <p>Address: <span th:text="${PATIENT_ADDRESS}"></span></p>
+          <p>Appointment ID: <span th:text="${APPOINTMENT_ID}"></span></p>
         </div>
       </div>
 
@@ -140,9 +171,9 @@
         <table class="report-table">
           <thead>
             <tr>
-              <th>Parameters</th>
-              <th>Observed Value</th>
-              <th>Normal Value</th>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
             </tr>
           </thead>
           <tbody>
@@ -159,13 +190,54 @@
         <table class="report-table">
           <thead>
             <tr>
-              <th>Parameters</th>
-              <th>Observed Value</th>
-              <th>Normal Value</th>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
             </tr>
           </thead>
           <tbody>
             <tr th:each="thyroidRow : ${thyroidReportRows}">
+              //Here thyroid row
+              <td th:text="${thyroidRow.column1}"></td>
+              <td th:text="${thyroidRow.column2}"></td>
+              <td th:text="${thyroidRow.column3}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="report-details">
+        <h3 class="report-title">BP Report</h3>
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="bpRow : ${bpReportRows}">
+              <td th:text="${bpRow.column1}"></td>
+              // Bp row
+              <td th:text="${bpRow.column2}"></td>
+              <td th:text="${bpRow.column3}"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="report-title">Thyroid Report</h3>
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="thyroidRow : ${thyroidReportRows}">
+              //Here thyroid row
               <td th:text="${thyroidRow.column1}"></td>
               <td th:text="${thyroidRow.column2}"></td>
               <td th:text="${thyroidRow.column3}"></td>
@@ -175,17 +247,28 @@
       </div>
     </main>
 
-    <div class="ft"> <p th:if="${pageNumber} == ${totalPages}" class="date">
+
+    <!-- FOOTER  -->
+    <div class="footer"> <p th:if="${pageNumber} == ${totalPages}" class="date">
       Date: <span th:text="${date}"></span>
     </p>
     <hr th:if="${pageNumber} == ${totalPages}" />
 
-   
-    <p class="powered">Powered By: FlexEHR Healthcare Private limited.</p>
+
+    <p class="footer-description">Powered By: FlexEHR Healthcare Private Limited.</p>
     <p class="page">
       Page <span th:text="${pageNumber}"></span> out of
       <span th:text="${totalPages}"></span>
     </p>
     </div>
+<!-- 
+     <div class="footer">
+      <p class="date">Date: <span th:text="${PDF_DATE}"></span></p>
+      <hr />
+      <p class="footer-description">Powered By: FlexEHR Healthcare Private Limited.</p>
+      <p class="page">
+          Page <span class="pageNumber"></span> of <span class="totalPages"></span>
+      </p>
+  </div> -->
   </body>
 </html>
