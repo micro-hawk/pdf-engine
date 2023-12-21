@@ -48,9 +48,9 @@ public class LabReportServiceImpl implements LabReportService {
 
     private Context getContext() {
         Context context = new Context();
-        context.setVariable("HOSPITAL_NAME", "Test Hospital");
+        context.setVariable("HOSPITAL_NAME", "Test Hospital Demo");
         context.setVariable("HOSPITAL_ADDRESS", "Imperial Paradise, Panthur Road, Bellandur, Karnataka, India, 560103");
-        context.setVariable("HOSPITAL_PHONE_NUMBER", "9428458865, 7043400140");
+        context.setVariable("HOSPITAL_PHONE_NUMBER", "9428458865, +917043400140");
         context.setVariable("HOSPITAL_EMAIL_ID", "microhawkx@test.com");
 
         context.setVariable("MRD_NUMBER", "MRD875JHVS");
@@ -59,7 +59,7 @@ public class LabReportServiceImpl implements LabReportService {
         context.setVariable("PATIENT_FULL_NAME", "MR. Vikas Das");
         context.setVariable("AGE", "22");
         context.setVariable("GENDER", "MALE");
-        context.setVariable("PATIENT_ADDRESS", "C Parth City, Ucharpi Road, Near Kunal Arc, Mehsana");
+        context.setVariable("PATIENT_ADDRESS", "C-Parth City, Ucharpi Road, Near Kunal Arc, Mehsana");
         context.setVariable("APPOINTMENT_ID", "SKR78253JS");
 
         context.setVariable("PDF_DATE", "16/12/2023");
@@ -68,6 +68,6 @@ public class LabReportServiceImpl implements LabReportService {
     }
 
     private String loadAndFillTemplate(Context context) {
-        return templateEngine.process("LabReport", context);
+        return templateEngine.process("sample", context);
     }
 }

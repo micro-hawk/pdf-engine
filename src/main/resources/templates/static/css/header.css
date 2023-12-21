@@ -18,7 +18,11 @@
 
 .address {
     margin-top: 5px;
-    color: #666;
+    color: #000;
+}
+
+.header-info td {
+    width: 60%;
 }
 
 p {

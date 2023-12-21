@@ -4,12 +4,16 @@
     bottom: 0;
     left: 0;
 }
+#footer .footer-info {
+    width: 100%;
+    font-size: 0.36cm;
+}
 
-.footer-description {
+#footer .footer-description {
     text-align: left;
 }
 
-.footer-pagination {
+#footer .footer-pagination {
     text-align: right;
 }
 

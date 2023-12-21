@@ -56,34 +56,10 @@ body {
     background-color: white;
 }
 
-.footer {
-    text-align: center;
-    position:relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-description {
-    text-align: left;
-}
-
-.page {
-    text-align: right;
-}
-
 hr {
     border: none;
     border-top: 0.7px solid black;
     margin: 20px 0;
-}
-
-
-.pageNumber:before {
-    content: counter(page);
-}
-
-.totalPages:before {
-    content: counter(pages);
 }
 
 .left, .right {
@@ -105,41 +81,6 @@ hr {
 
 <body>
   <div th:replace="~{fragments/header :: header}"></div>
-  <!-- HOSPITAL HEADER -->
-  <!--
-  <table>
-    <tr>
-      <th style="width: 50px ;">
-
-      </th>
-      <th>
-
-      </th>
-    </tr>
-    <tr >
-      <td >
-        <img class="logo" style="width: 50px;" src="static/assets/logo.png" alt="Test Hospital Logo" />
-      </td>
-      <td>
-        <table class="header-info">
-          <tr>
-            <td>
-              <h1 class="hospital-name">Test Hospital</h1>
-              <p class="address">
-                Imperial Paradise, Panthur,Bellandur, Karanataka, India, 560103
-              </p>
-            </td>
-            <td>
-              <p class="contact-info">Phone: 9428458865</p>
-              <p class="contact-info2">Email: hospital@test.com</p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-
- -->
 
   <main>
     <h2 class="section-title"><u>Lab Report</u></h2>
