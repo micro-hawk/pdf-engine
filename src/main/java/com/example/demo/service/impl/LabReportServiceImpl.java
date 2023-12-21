@@ -48,6 +48,11 @@ public class LabReportServiceImpl implements LabReportService {
 
     private Context getContext() {
         Context context = new Context();
+        context.setVariable("HOSPITAL_NAME", "Test Hospital");
+        context.setVariable("HOSPITAL_ADDRESS", "Imperial Paradise, Panthur Road, Bellandur, Karnataka, India, 560103");
+        context.setVariable("HOSPITAL_PHONE_NUMBER", "9428458865, 7043400140");
+        context.setVariable("HOSPITAL_EMAIL_ID", "microhawkx@test.com");
+
         context.setVariable("MRD_NUMBER", "MRD875JHVS");
         context.setVariable("MOBILE_NUMBER", "7043400140");
         context.setVariable("DOCTOR_NAME", "DR. Doctor Das");

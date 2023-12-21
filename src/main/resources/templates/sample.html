@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <title>SAMPLE PDF</title>
     <link rel="stylesheet" type="text/css" th:href="@{static/css/footer.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/header.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/common.css}" />
 </head>
 <body>
+<div th:replace="~{fragments/header :: header}"></div>
 <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 </html>
