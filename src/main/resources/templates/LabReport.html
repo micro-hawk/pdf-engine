@@ -1,188 +1,237 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <title>Test Hospital Lab Report</title>
-  <link rel="stylesheet" type="text/css" th:href="@{static/css/footer.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{static/css/footer.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{static/css/header.css}" />
+ 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    /* .logo {
-    height: 100px;
-    width: 100px;
+ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.patient-info {
+    display: table;
+    width: 100%;
+}
+
+.section-title{
+  text-align:center;
+}
+.patient-info td {
+    vertical-align: top;
+}
+
+.report-details {
     text-align: left;
-    } */
-    .hospital-name {
-      font-size: 24px;
-      font-weight: bold;
-      margin-left: 90px;
-    }
-    .address {
-      margin-left: 90px;
-    }
-    .contact-info, .contact-info2 {
-      font-size: 14px;
-      text-align: right;
-      white-space: nowrap;
-    }
-    .header-info {
-      display: table;
-      width: 100%;
-    }
-    .header-info td {
-      padding: 10px;
-    }
-    .patient-info {
-      display: table;
-      width: 100%;
-    }
-    .patient-info td {
-      vertical-align: top;
-    }
-    .report-details {
-      text-align: left;
-    }
-    .report-title {
-      margin-top: 20px;
-    }
-    .report-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    .report-table th,
-    .report-table td {
-      border: 2px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-    .report-table th {
-      background-color: white;
-    }
-    hr {
-      border: none;
-      border-top: 0.7px solid black;
-      margin: 20px 0;
-    }
-    .left, .right {
-      width: 50%;
-      display: table-cell;
-      padding: 10px;
-    }
-    .left p, .right p {
-      margin: 5px 0;
-    }
-    .report-table th {
-      background-color: #f5f5f5;
-    }
+}
+
+.report-title {
+    margin-top: 20px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.report-table th,
+.report-table td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.report-table th {
+    background-color: white;
+}
+
+.footer {
+    text-align: center;
+    position:relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-description {
+    text-align: left;
+}
+
+.page {
+    text-align: right;
+}
+
+hr {
+    border: none;
+    border-top: 0.7px solid black;
+    margin: 20px 0;
+}
+
+
+.pageNumber:before {
+    content: counter(page);
+}
+
+.totalPages:before {
+    content: counter(pages);
+}
+
+.left, .right {
+    width: 50%;
+    display: table-cell;
+    padding: 10px;
+}
+
+.left p, .right p {
+    margin: 5px 0;
+}
+
+.report-table th {
+    background-color: #f5f5f5; 
+}
+
   </style>
-</head>
+</head> 
+
 <body>
-<!-- HOSPITAL HEADER -->
-<table>
-  <tr>
-    <th style="width: 50px ;">
-    </th>
-    <th>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <img class="logo" style="width: 50px;" src="static/assets/logo.png" alt="Test Hospital Logo"/>
-    </td>
-    <td>
-      <table class="header-info">
-        <tr>
-          <td>
-            <h1 class="hospital-name">Test Hospital</h1>
-            <p class="address">
-              Imperial Paradise, Panthur,Bellandur, Karanataka, India, 560103
-            </p>
-          </td>
-          <td>
-            <p class="contact-info">Phone: 9428458865</p>
-            <p class="contact-info2">Email: hospital@test.com</p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<hr/>
-<main>
-  <h2 class="section-title"><u>Lab Report</u></h2>
-  <!-- Patient Information Table -->
-  <table class="patient-info">
+  <div th:replace="~{fragments/header :: header}"></div>
+  <!-- HOSPITAL HEADER -->
+  <!--
+  <table>
     <tr>
-      <td class="left">
-        <p>MRD No: <span th:text="${MRD_NUMBER}"></span></p>
-        <p>Contact Number: <span th:text="${MOBILE_NUMBER}"></span></p>
-        <p>Requested Doctor's Name: <span th:text="${DOCTOR_NAME}"></span></p>
+      <th style="width: 50px ;">
+
+      </th>
+      <th>
+
+      </th>
+    </tr>
+    <tr >
+      <td >
+        <img class="logo" style="width: 50px;" src="static/assets/logo.png" alt="Test Hospital Logo" />
       </td>
-      <td class="right">
-        <p class="pinfo">
-          Patient: <span th:text="${PATIENT_FULL_NAME}"></span>/
-          Age: <span th:text="${AGE}"></span>/ Gender:
-          <span th:text="${GENDER}"></span>
-        </p>
-        <p class="address-section">
-          Address: <span th:text="${PATIENT_ADDRESS}"></span><br/>
-          Appointment ID: <span th:text="${APPOINTMENT_ID}"></span>
-        </p>
+      <td>
+        <table class="header-info">
+          <tr>
+            <td>
+              <h1 class="hospital-name">Test Hospital</h1>
+              <p class="address">
+                Imperial Paradise, Panthur,Bellandur, Karanataka, India, 560103
+              </p>
+            </td>
+            <td>
+              <p class="contact-info">Phone: 9428458865</p>
+              <p class="contact-info2">Email: hospital@test.com</p>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
-  <!-- BP Report Table -->
-  <div class="report-details">
-    <h3 class="report-title">BP Report</h3>
-    <table class="report-table">
-      <thead>
-      <tr>
-        <th>Column 1</th>
-        <th>Column 2</th>
-        <th>Column 3</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="bpRow : ${bpReportRows}">
-        <td th:text="${bpRow.column1}"></td>
-        <td th:text="${bpRow.column2}"></td>
-        <td th:text="${bpRow.column3}"></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-  <!-- Thyroid Report Table -->
-  <div class="report-details">
-    <h3 class="report-title">Thyroid Report</h3>
-    <table class="report-table">
-      <thead>
-      <tr>
-        <th>Column 1</th>
-        <th>Column 2</th>
-        <th>Column 3</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="thyroidRow : ${thyroidReportRows}">
-        <td th:text="${thyroidRow.column1}"></td>
-        <td th:text="${thyroidRow.column2}"></td>
-        <td th:text="${thyroidRow.column3}"></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</main>
 
-<!--  FOOTER START -->
-<div th:replace="~{fragments/footer :: footer}"></div>
-<!--FOOTER END-->
+ -->
 
+  <main>
+    <h2 class="section-title"><u>Lab Report</u></h2>
+
+    <!-- Patient Information Table -->
+    <table class="patient-info">
+      <tr>
+        <td class="left">
+          <p style="margin-bottom: 15px;">MRD No: <span th:text="${MRD_NUMBER}"></span></p>
+          <p style="margin-bottom: 15px;" >Contact Number: <span th:text="${MOBILE_NUMBER}"></span></p>
+          <p style="margin-bottom: 15px;">Requested Doctor's Name: <span th:text="${DOCTOR_NAME}"></span></p>
+        </td> 
+        <td class="right">
+          <p style =" margin-top:-5px " class="pinfo">
+            Patient: <span th:text="${PATIENT_FULL_NAME}"></span>/
+            Age: <span th:text="${AGE}"></span>/ Gender:
+            <span th:text="${GENDER}"></span>
+          </p>
+          <p style="margin-bottom: 10px;">
+            Address: <span th:text="${PATIENT_ADDRESS}"></span><br/>
+           
+          </p>
+          <p style="margin-bottom: 10px;"> 
+            Appointment ID: <span th:text="${APPOINTMENT_ID}"></span>
+          </p>
+        </td>
+      </tr>
+    </table>
+    
+    <!-- BP Report Table -->
+    <div class="report-details">
+      <h3 class="report-title">BP Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="bpRow : ${bpReportRows}">
+            <td th:text="${bpRow.column1}"></td>
+            <td th:text="${bpRow.column2}"></td>
+            <td th:text="${bpRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Thyroid Report Table -->
+    <div class="report-details">
+      <h3 class="report-title">Thyroid Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="thyroidRow : ${thyroidReportRows}">
+            <td th:text="${thyroidRow.column1}"></td>
+            <td th:text="${thyroidRow.column2}"></td>
+            <td th:text="${thyroidRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </main>
+
+<!--
+  <table class="footer">
+    <tr>
+      <td>
+        <p th:if="${pageNumber} == ${totalPages}" class="date">
+          Date: <span th:text="${date}"></span>
+        </p>
+      </td>
+      <td>
+        <p class="footer-description">Powered By: FlexEHR Healthcare Private Limited.</p>
+        <p class="page">
+          Page <span th:text="${pageNumber}"></span> out of
+          <span th:text="${totalPages}"></span>
+        </p>
+      </td>
+    </tr>
+  </table> 
+  -->
+  <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
+
 </html>

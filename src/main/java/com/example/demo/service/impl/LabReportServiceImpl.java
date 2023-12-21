@@ -68,6 +68,6 @@ public class LabReportServiceImpl implements LabReportService {
     }
 
     private String loadAndFillTemplate(Context context) {
-        return templateEngine.process("sample", context);
+        return templateEngine.process("LabReport", context);
     }
 }
