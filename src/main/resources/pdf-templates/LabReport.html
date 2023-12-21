@@ -1,125 +1,190 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Test Hospital Lab Report</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      th:href="@{http://www.example.com/styles.css}"
-    />
 
-    <style type="text/css">
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Hospital Lab Report</title>
+  <link rel="stylesheet" type="text/css" th:href="@{http://www.example.com/styles.css}" />
 
-      .logo {
-        height: 100px;
-        width: 100px;
-        text-align: right;
-        position: absolute;
-        top: 20px;
-        right: 0;
-      }
+  <style type="text/css">
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-      .hospital-name {
-        font-size: 24px;
-        font-weight: bold;
-      }
+    .logo {
+      height: 100px;
+      width: 100px;
+      text-align: left;
+      position: absolute;
+      top: 20px;
+      left: 0;
+    }
 
-      .address,
-      .contact-info {
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
+    .hospital-name {
+      font-size: 24px;
+      font-weight: bold;
+     margin-left: 90px;
+      left: 44px;
+    }
 
-      main {
-        text-align: center;
-        flex: 1;
-      }
+    .address {
+      margin-left: 90px;
+      top: 0;
+    }
 
-      .report-details {
-        text-align: left;
-      }
 
-      .report-title {
-        margin-top: 20px;
-      }
-      .left {
-        text-align: left;
-      }
-      .right {
-        position: absolute;
-        top: 175px;
-        right: 100px;
-      }
+    .contact-info {
+      font-size: 14px;
+      margin-bottom: 5px;
+      text-align: right;
+      position: absolute;
+  top: 40px;
+  right: 30px;
+  white-space: nowrap;
+    }
+    
+    .contact-info2 {
+      font-size: 14px;
+      text-align: right;
+      position: absolute ;
+  top: 60px;
+  right: 30px;
+  
+    }
+    .contact-info p {
+      margin: 0; /* Remove default margin */
+      line-height: 1.5; /* Increase line height for better spacing */
+    }
+    main {
+      text-align: center;
+      flex: 1;
+    }
 
-      .report-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-      }
+    .report-details {
+      text-align: left;
+    }
 
-      .report-table th,
-      .report-table td {
-        border: 2px solid black;
-        padding: 8px;
-        text-align: left;
-        background-color: transparent;
-      }
+    .address-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      
+    }
 
-      .report-table th {
-        background-color: white;
-      }
+    .report-title {
+      margin-top: 20px;
+    }
 
-      .patient-info {
-        display: flex;
-        justify-content: space-between;
-      }
+    .left {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+     
+    }
 
-      .footer {
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            margin-top: 285px;
-        }
+    .right {
+      display: flex;
+      flex-direction: column;
+   position: absolute;
+      text-align: right;
+  
+   
+      top: 233px;
+      right: 0;
+    }
+    .left, .right {
+      flex: 1 1 50%; /* Equal width for both columns */
+      padding: 10px; /* Padding for spacing */
+  }
 
-      .date {
-        text-align: left;
-      }
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-      .footer-description {
-        text-align: left;
-      }
+    .header-info {
 
-      .page {
-        text-align: right;
-        position: relative;
-        top: -35px;
-      }
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
 
-      .date {
-            display: none;
-        }
+    .report-table th,
+    .report-table td {
+      border: 2px solid black;
+      padding: 8px;
+      text-align: left;
+      background-color: transparent;
+    }
+    .contact-container {
+      display: inline-block;  /* This will keep the contact info and email on the same line */
+    }
 
-        .pageNumber:before {
-            content: counter(page);
-        }
+    .report-table th {
+      background-color: white;
+    } 
 
-        .totalPages:before {
-            content: counter(pages);
-        }
+    .patient-info {
+      display: flex;
+    flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-    </style>
 
-<!-- <script th:inline="javascript">
+    .footer {
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      margin-top: 285px;
+    }
+   
+    .date {
+      text-align: left;
+    }
+
+    .footer-description {
+      text-align: left;
+    }
+    hr {
+      border: none;            /* Removes the default border */
+      border-top: 0.7px solid black;  /* Adds a new 1px solid black border on the top */
+      margin: 20px 0; 
+        /* Adjusts the margin for spacing */
+    }
+    .header-info {
+      margin-bottom: -30px; /* Adjust this value based on your requirement */
+    }
+
+    .page {
+      text-align: right;
+      position: relative;
+      top: -35px;
+    }
+    .date {
+      display: none;
+    }
+
+    .pageNumber:before {
+      content: counter(page);
+    }
+
+    .totalPages:before {
+      content: counter(pages);
+    }
+  </style>
+
+  <!-- <script th:inline="javascript">
   /* JavaScript to show the date on the last page */
   var isLastPage = `/*[(${pageNumber} == ${totalPages})]*/` false;
 
@@ -130,126 +195,135 @@
   }
 </script> -->
 
-  </head>
-  <body>
+</head> 
 
-    <!-- HOSPITAL HEADER -->
-    <div class="header-info">
-      <h1 class="hospital-name">Test Hospital</h1>
-      <p class="address">
-        Imperial Paradise, Panthur, Bellandur, Karanataka, India, 560103
-      </p>
-      <p class="contact-info">
-        Phone: 1800-123-123, 888888888, 9428458865 | Email: hospital@test.com
-      </p>
+<body>
+
+  <!-- HOSPITAL HEADER -->
+  <div class="header-info">
+    <h1 class="hospital-name">Test Hospital</h1>
+    <p class="address">
+      Imperial Paradise, Panthur,<br/>Bellandur, Karanataka, India, 560103
+    </p>
+    <div class="contact-container">
+    <p class="contact-info">
+      Phone: 9428458865 
+    </p>
+    <p class="contact-info2">
+      Email: hospital@test.com
+    </p>
+  </div>
+  </div>
+  <img class="logo" src="logo.png" alt="Test Hospital Logo" />
+  <hr/>
+
+  <main>
+    <h2 class="section-title"><u>Lab Report</u></h2>
+    <div class="patient-info">
+      <div class="left">
+        <!-- Here we Add All the info of lab report -->
+        <p>MRD No: <span th:text="${MRD_NUMBER}"></span></p>
+        <p>Contact Number: <span th:text="${MOBILE_NUMBER}"></span></p>
+        <p>Requested Doctor's Name:<span th:text="${DOCTOR_NAME}"></span></p>
+      </div>
+      <div class="right">
+        <p class="pinfo">
+          Patient: <span th:text="${PATIENT_FULL_NAME}"></span>/
+          Age: <span th:text="${AGE}"></span>/ Gender:
+          <span th:text="${GENDER}"></span>
+        </p>
+        <div class="address-section">
+          <p class="add-content">Address: <span th:text="${PATIENT_ADDRESS}"></span></p>
+          <p class="app-id">Appointment ID: <span th:text="${APPOINTMENT_ID}"></span></p>
+        </div>
+      </div>
     </div>
-    <img class="logo" src="logo.png" alt="Test Hospital Logo" />
-    <hr />
 
-    <main>
-      <h2 class="section-title"><u>Lab Report</u></h2>
-      <div class="patient-info">
-        <div class="left">
-          <!-- Here we Add All the info of lab report -->
-          <p>MRD No: <span th:text="${MRD_NUMBER}"></span></p>
-          <p>Contact Number: <span th:text="${MOBILE_NUMBER}"></span></p>
-          <p>Requested Doctor's Name:<span th:text="${DOCTOR_NAME}"></span></p>
-        </div>
-        <div class="right">
-          <p>
-            Patient: <span th:text="${PATIENT_FULL_NAME}"></span>/ 
-            Age: <span th:text="${AGE}"></span>/ Gender:
-            <span th:text="${GENDER}"></span>
-          </p>
-          <p>Address: <span th:text="${PATIENT_ADDRESS}"></span></p>
-          <p>Appointment ID: <span th:text="${APPOINTMENT_ID}"></span></p>
-        </div>
-      </div>
+    <div class="report-details">
+      <h3 class="report-title">BP Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="bpRow : ${bpReportRows}">
+            <td th:text="${bpRow.column1}"></td>
+            // Bp row
+            <td th:text="${bpRow.column2}"></td>
+            <td th:text="${bpRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <div class="report-details">
-        <h3 class="report-title">BP Report</h3>
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="bpRow : ${bpReportRows}">
-              <td th:text="${bpRow.column1}"></td>
-              // Bp row
-              <td th:text="${bpRow.column2}"></td>
-              <td th:text="${bpRow.column3}"></td>
-            </tr>
-          </tbody>
-        </table>
+      <h3 class="report-title">Thyroid Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="thyroidRow : ${thyroidReportRows}">
+            //Here thyroid row
+            <td th:text="${thyroidRow.column1}"></td>
+            <td th:text="${thyroidRow.column2}"></td>
+            <td th:text="${thyroidRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-        <h3 class="report-title">Thyroid Report</h3>
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="thyroidRow : ${thyroidReportRows}">
-              //Here thyroid row
-              <td th:text="${thyroidRow.column1}"></td>
-              <td th:text="${thyroidRow.column2}"></td>
-              <td th:text="${thyroidRow.column3}"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="report-details">
+      <h3 class="report-title">BP Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="bpRow : ${bpReportRows}">
+            <td th:text="${bpRow.column1}"></td>
+            // Bp row
+            <td th:text="${bpRow.column2}"></td>
+            <td th:text="${bpRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <div class="report-details">
-        <h3 class="report-title">BP Report</h3>
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="bpRow : ${bpReportRows}">
-              <td th:text="${bpRow.column1}"></td>
-              // Bp row
-              <td th:text="${bpRow.column2}"></td>
-              <td th:text="${bpRow.column3}"></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3 class="report-title">Thyroid Report</h3>
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="thyroidRow : ${thyroidReportRows}">
-              //Here thyroid row
-              <td th:text="${thyroidRow.column1}"></td>
-              <td th:text="${thyroidRow.column2}"></td>
-              <td th:text="${thyroidRow.column3}"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
+      <h3 class="report-title">Thyroid Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="thyroidRow : ${thyroidReportRows}">
+            //Here thyroid row
+            <td th:text="${thyroidRow.column1}"></td>
+            <td th:text="${thyroidRow.column2}"></td>
+            <td th:text="${thyroidRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
 
 
-    <!-- FOOTER  -->
-    <div class="footer"> <p th:if="${pageNumber} == ${totalPages}" class="date">
+  <!-- FOOTER  -->
+  <div class="footer">
+    <p th:if="${pageNumber} == ${totalPages}" class="date">
       Date: <span th:text="${date}"></span>
     </p>
     <hr th:if="${pageNumber} == ${totalPages}" />
@@ -260,8 +334,8 @@
       Page <span th:text="${pageNumber}"></span> out of
       <span th:text="${totalPages}"></span>
     </p>
-    </div>
-<!-- 
+  </div>
+  <!-- 
      <div class="footer">
       <p class="date">Date: <span th:text="${PDF_DATE}"></span></p>
       <hr />
@@ -270,5 +344,6 @@
           Page <span class="pageNumber"></span> of <span class="totalPages"></span>
       </p>
   </div> -->
-  </body>
+</body>
+
 </html>
