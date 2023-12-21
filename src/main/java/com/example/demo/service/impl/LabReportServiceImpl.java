@@ -31,7 +31,7 @@ public class LabReportServiceImpl implements LabReportService {
         return renderPdf(html);
     }
 
-    private static final String PDF_RESOURCES = "/pdf-templates/";
+    private static final String PDF_RESOURCES = "/templates/";
 
     private byte[] renderPdf(String html) throws IOException, DocumentException {
         File file = File.createTempFile("example-test", ".pdf");
@@ -63,6 +63,6 @@ public class LabReportServiceImpl implements LabReportService {
     }
 
     private String loadAndFillTemplate(Context context) {
-        return templateEngine.process("LabReport", context);
+        return templateEngine.process("sample", context);
     }
 }
