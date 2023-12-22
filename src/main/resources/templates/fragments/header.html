@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Header</title>
+</head>
+
+<body>
+
+<!-- HOSPITAL HEADER -->
+<div id="header" th:fragment="header">
+    <table>
+        <tr>
+            <th style="width: 50px ;"></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <img class="logo" style="width: 100px;" src="static/assets/logo.png" alt="" />
+            </td>
+
+            <td>
+                <table class="header-info">
+                    <tr>
+                        <td>
+                            <h1 class="hospital-name"><span th:text="${HOSPITAL_NAME}"></span></h1>
+                            <p class="address">
+                                <span th:text="${HOSPITAL_ADDRESS}"></span>
+                            </p>
+                        </td>
+                        <td>
+                            <p><b>Phone: </b><span th:text="${HOSPITAL_PHONE_NUMBER}"></span></p>
+                            <p><b>Email: </b><span th:text="${HOSPITAL_EMAIL_ID}"></span></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <hr/>
+</div>
+
+</body>
+

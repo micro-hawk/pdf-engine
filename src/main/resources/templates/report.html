@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8"/>
+  <title>Testing Report</title>
+
+  <style>
+    @media print {
+      #footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      #header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    body {
+      margin: 0;
+    }
+
+    #header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="css/footer.css" th:href="css/footer.css">
+</head>
+<body>
+<div id="header">
+  Header text
+</div>
+
+
+
+
+
+</body>
+</html>

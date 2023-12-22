@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Hospital Lab Report</title>
+  <link rel="stylesheet" type="text/css" th:href="@{static/css/footer.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{static/css/header.css}" />
+ 
+  <style>
+ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.patient-info {
+    display: table;
+    width: 100%;
+}
+
+.section-title{
+  text-align:center;
+}
+.patient-info td {
+    vertical-align: top;
+}
+
+.report-details {
+    text-align: left;
+}
+
+.report-title {
+    margin-top: 20px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.report-table th,
+.report-table td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.report-table th {
+    background-color: white;
+}
+
+hr {
+    border: none;
+    border-top: 0.7px solid black;
+    margin: 20px 0;
+}
+
+.left, .right {
+    width: 50%;
+    display: table-cell;
+    padding: 10px;
+}
+
+.left p, .right p {
+    margin: 5px 0;
+}
+
+.report-table th {
+    background-color: #f5f5f5; 
+}
+
+  </style>
+</head> 
+
+<body>
+  <div th:replace="~{fragments/header :: header}"></div>
+
+  <main>
+    <h2 class="section-title"><u>Lab Report</u></h2>
+
+    <!-- Patient Information Table -->
+    <table class="patient-info">
+      <tr>
+        <td class="left">
+          <p style="margin-bottom: 15px;">MRD No: <span th:text="${MRD_NUMBER}"></span></p>
+          <p style="margin-bottom: 15px;" >Contact Number: <span th:text="${MOBILE_NUMBER}"></span></p>
+          <p style="margin-bottom: 15px;">Requested Doctor's Name: <span th:text="${DOCTOR_NAME}"></span></p>
+        </td> 
+        <td class="right">
+          <p style =" margin-top:-5px " class="pinfo">
+            Patient: <span th:text="${PATIENT_FULL_NAME}"></span>/
+            Age: <span th:text="${AGE}"></span>/ Gender:
+            <span th:text="${GENDER}"></span>
+          </p>
+          <p style="margin-bottom: 10px;">
+            Address: <span th:text="${PATIENT_ADDRESS}"></span><br/>
+           
+          </p>
+          <p style="margin-bottom: 10px;"> 
+            Appointment ID: <span th:text="${APPOINTMENT_ID}"></span>
+          </p>
+        </td>
+      </tr>
+    </table>
+    
+    <!-- BP Report Table -->
+    <div class="report-details">
+      <h3 class="report-title">BP Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="bpRow : ${bpReportRows}">
+            <td th:text="${bpRow.column1}"></td>
+            <td th:text="${bpRow.column2}"></td>
+            <td th:text="${bpRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Thyroid Report Table -->
+    <div class="report-details">
+      <h3 class="report-title">Thyroid Report</h3>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="thyroidRow : ${thyroidReportRows}">
+            <td th:text="${thyroidRow.column1}"></td>
+            <td th:text="${thyroidRow.column2}"></td>
+            <td th:text="${thyroidRow.column3}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </main>
+
+<!--
+  <table class="footer">
+    <tr>
+      <td>
+        <p th:if="${pageNumber} == ${totalPages}" class="date">
+          Date: <span th:text="${date}"></span>
+        </p>
+      </td>
+      <td>
+        <p class="footer-description">Powered By: FlexEHR Healthcare Private Limited.</p>
+        <p class="page">
+          Page <span th:text="${pageNumber}"></span> out of
+          <span th:text="${totalPages}"></span>
+        </p>
+      </td>
+    </tr>
+  </table> 
+  -->
+  <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+#header {
+    margin-bottom: 20px;
+}
+
+.logo {
+    border-radius: 5px;
+}
+
+.header-info {
+    width: 100%;
+}
+
+.hospital-name {
+    font-size: 28px;
+    color: #000;
+    margin: 0;
+}
+
+.address {
+    margin-top: 5px;
+    color: #000;
+}
+
+.header-info td {
+    width: 60%;
+}
+
+p {
+    margin: 5px 0;
+}
