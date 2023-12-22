@@ -21,22 +21,10 @@ public class ThymeleafConfiguration {
         return pdfTemplateResolver;
     }
 
-//    @Bean
-//    public SpringResourceTemplateResolver cssTemplateResolver() {
-//        SpringResourceTemplateResolver cssTemplateResolver = new SpringResourceTemplateResolver();
-//        cssTemplateResolver.setPrefix("classpath:/static/css");
-//        cssTemplateResolver.setSuffix(".css");
-//        cssTemplateResolver.setTemplateMode(TemplateMode.CSS);
-//        cssTemplateResolver.setCacheable(false);
-//        cssTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
-//        return cssTemplateResolver;
-//    }
-
     @Bean
     public SpringTemplateEngine springTemplateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(htmlTemplateResolver());
-//        templateEngine.addTemplateResolver(cssTemplateResolver());
         return templateEngine;
     }
 }
