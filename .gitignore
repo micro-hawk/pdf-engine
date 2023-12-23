@@ -57,3 +57,5 @@ build/
 
 ### Local Configuration ###
 .env
+
+*.properties
