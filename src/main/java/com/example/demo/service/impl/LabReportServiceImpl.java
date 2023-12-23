@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.service.api.LabReportService;
+import com.example.demo.service.api.S3Service;
 import com.lowagie.text.DocumentException;
 
 import java.io.FileOutputStream;
@@ -9,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
+import java.util.Base64;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -23,6 +25,8 @@ public class LabReportServiceImpl implements LabReportService {
 
     @Autowired
     SpringWebFluxTemplateEngine templateEngine;
+    @Autowired
+    private S3Service s3Service;
 
     @Override
     public byte[] generateLabReportPdf() throws IOException, DocumentException {
@@ -46,7 +50,10 @@ public class LabReportServiceImpl implements LabReportService {
         return Files.readAllBytes(file.toPath());
     }
 
-    private Context getContext() {
+    private Context getContext() throws IOException {
+        byte[] logoBase = s3Service.getByteDataFromS3("afd93c6dfc40c4aad46fdc79ee8e5532").getBody();
+
+//        log.info(Arrays.toString(logoBase));
         Context context = new Context();
         context.setVariable("HOSPITAL_NAME", "Test Hospital Demo");
         context.setVariable("HOSPITAL_ADDRESS", "Imperial Paradise, Panthur Road, Bellandur, Karnataka, India, 560103");
@@ -63,6 +70,8 @@ public class LabReportServiceImpl implements LabReportService {
         context.setVariable("APPOINTMENT_ID", "SKR78253JS");
 
         context.setVariable("PDF_DATE", "16/12/2023");
+
+        context.setVariable("HOSPITAL_LOGO_BASE64", Base64.getEncoder().encodeToString(logoBase));
 
         return context;
     }

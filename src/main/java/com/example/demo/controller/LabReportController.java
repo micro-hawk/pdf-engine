@@ -3,8 +3,11 @@ package com.example.demo.controller;
 import com.example.demo.client.api.HospitalClient;
 import com.example.demo.model.dto.MasterHospitalCommonDto;
 import com.example.demo.model.response.GlobalResponse;
+import com.example.demo.service.api.S3Service;
+import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +27,8 @@ public class LabReportController {
     private LabReportService labReportService;
     @Autowired
     private HospitalClient hospitalClient;
+    @Autowired
+    private S3Service s3Service;
 
     @GetMapping(value = "/lab", produces = MediaType.APPLICATION_PDF_VALUE)
     public byte[] generatePdf() {
@@ -40,5 +45,11 @@ public class LabReportController {
         @RequestParam("hospitalCode") String hospitalCode) {
 
         return hospitalClient.getCommonDetailsByHospitalCode(hospitalCode);
+    }
+
+    @GetMapping(value = "/test")
+    public ResponseEntity<byte[]> download(@RequestParam("key") String key) throws IOException {
+        log.info("requested key: {}", key);
+        return s3Service.getByteDataFromS3(key);
     }
 }
