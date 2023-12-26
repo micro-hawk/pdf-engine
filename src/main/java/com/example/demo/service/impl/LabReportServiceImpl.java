@@ -51,9 +51,9 @@ public class LabReportServiceImpl implements LabReportService {
     }
 
     private Context getContext() throws IOException {
-        byte[] logoBase = s3Service.getByteDataFromS3("afd93c6dfc40c4aad46fdc79ee8e5532").getBody();
+        byte[] logoBase = s3Service.getByteDataFromS3("aab8f6bb8ac2987a2d0145f8c14dc13c").getBody();
+        String hospitalLogo = Base64.getEncoder().encodeToString(logoBase);
 
-//        log.info(Arrays.toString(logoBase));
         Context context = new Context();
         context.setVariable("HOSPITAL_NAME", "Test Hospital Demo");
         context.setVariable("HOSPITAL_ADDRESS", "Imperial Paradise, Panthur Road, Bellandur, Karnataka, India, 560103");
@@ -71,7 +71,7 @@ public class LabReportServiceImpl implements LabReportService {
 
         context.setVariable("PDF_DATE", "16/12/2023");
 
-        context.setVariable("HOSPITAL_LOGO_BASE64", Base64.getEncoder().encodeToString(logoBase));
+        context.setVariable("HOSPITAL_LOGO_BASE64", hospitalLogo);
 
         return context;
     }

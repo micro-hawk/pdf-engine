@@ -11,18 +11,14 @@
 <!-- HOSPITAL HEADER -->
 <div id="header" th:fragment="header">
     <table>
-        <tr>
-            <th style="width: 50px ;"></th>
+        <tr th:if="${ HOSPITAL_LOGO_BASE64 != null and not #strings.isEmpty(HOSPITAL_LOGO_BASE64) }">
+            <th style="width: 50px;"></th>
             <th></th>
         </tr>
         <tr>
-            <td>
-                <!--                <img class="logo" style="width: 100px;" src="static/assets/logo.png" alt="" />-->
-                <img class="logo" style="width: 100px;" th:src="'data:image/png;base64,' + ${HOSPITAL_LOGO_BASE64}"/>
-
-
+            <td th:if="${ HOSPITAL_LOGO_BASE64 != null and not #strings.isEmpty(HOSPITAL_LOGO_BASE64) }">
+                <img class="logo" style="width: 100px;" th:src="'data:image/png;base64,' + ${ HOSPITAL_LOGO_BASE64 }"/>
             </td>
-
             <td>
                 <table class="header-info">
                     <tr>
@@ -41,6 +37,7 @@
             </td>
         </tr>
     </table>
+
     <hr/>
 </div>
 
