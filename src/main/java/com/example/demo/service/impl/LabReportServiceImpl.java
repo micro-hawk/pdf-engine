@@ -17,10 +17,10 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringWebFluxTemplateEngine;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
-@Service
+@Service    
 @Slf4j
 public class LabReportServiceImpl implements LabReportService {
-
+ 
     @Autowired
     SpringWebFluxTemplateEngine templateEngine;
 
@@ -63,11 +63,17 @@ public class LabReportServiceImpl implements LabReportService {
         context.setVariable("APPOINTMENT_ID", "SKR78253JS");
 
         context.setVariable("PDF_DATE", "16/12/2023");
-
+        context.setVariable("INITIAL_AMOUNT","10000");
+        context.setVariable("INSURANCE_DISCOUNT","10%");
+        context.setVariable("TOTAL_DISCOUNT","1000");
+        context.setVariable("BILL_AMOUNT","2000");
+        context.setVariable("PAYMENT_MODE","ONLINE");
+        context.setVariable("TRANSACTION_ID","09932758793");
+        context.setVariable("RECEPTION_NAME","Ritik Pal");
         return context;
     }
 
     private String loadAndFillTemplate(Context context) {
-        return templateEngine.process("sample", context);
+        return templateEngine.process("hospital", context);
     }
 }

@@ -1,0 +1,23 @@
+/* Table styles */
+.patient-info .info-left, .patient-info .info-right {
+    width: 50%;
+}
+
+.patient-info {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.patient-info tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.patient-info td {
+    padding: 2px;
+}
+
+.info-label {
+    margin: 0;
+}

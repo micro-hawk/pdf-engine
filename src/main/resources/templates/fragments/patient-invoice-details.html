@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Patient Invoice Details</title>
+  </head>
+  <body>
+    <!-- Patient Information Table -->
+    <table class="patient-info" th:fragment="patient-invoice-details">
+      <tr>
+        <td class="info-left">
+          <p class="info-label">
+            <b>Invoice No :</b> <span th:text="${INVOICE_NUMBER}"></span>
+          </p>
+        </td>
+        <td class="info-right">
+          <p class="info-label">
+            <b>Patient:</b> <span th:text="${PATIENT_FULL_NAME}"></span>
+            <b> / Age:</b> <span th:text="${AGE}"></span> <b> / Gender:</b>
+            <span th:text="${GENDER }"></span>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="info-left">
+          <p class="info-label">
+            <b>Invoice Date Time :</b> <span th:text="${MOBILE_NUMBER}"></span>
+          </p>
+        </td>
+        <td class="info-right">
+          <p class="info-label">
+            <b>MRD No</b> <span th:text="${MRD_NUMBER}"></span>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="info-left">
+          <p class="info-label">
+            <b>Appointment ID:</b> <span th:text="${APPOINTMENT_ID}"></span>
+          </p>
+        </td>
+        <td class="info-right">
+          <p class="info-label">
+            <b>Contact Number</b><span th:text="${CONTACT_NUMBER}"></span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-left">
+          <p class="info-label">
+            <b>Doctor's Name:</b> <span th:text="${DOCTOR_NAME}"></span>
+          </p>
+        </td>
+        <td class="info-right">
+          <p class="info-label">
+            <b>Address:</b><span th:text="${ADDRESS}"></span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="info-left">
+          <p class="info-label">
+            <b>GST No:</b> <span th:text="${GST_NO}"></span>
+          </p>
+        </td>
+        <td class="info-right">
+          <p class="info-label">
+            <b>Hospital PAN No:</b><span th:text="${HOSPITAL_PAN_NO}"></span>
+          </p>
+        </td>
+      </tr>
+    </table>
+    <hr />
+  </body>
+</html>
