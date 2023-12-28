@@ -35,6 +35,12 @@ public class LabReportServiceImpl implements LabReportService {
         return renderPdf(html);
     }
 
+    @Override
+    public String generateHTML() throws IOException {
+        Context context = getContext();
+        return loadAndFillTemplate(context);
+    }
+
     private static final String PDF_RESOURCES = "/templates/";
 
     private byte[] renderPdf(String html) throws IOException, DocumentException {

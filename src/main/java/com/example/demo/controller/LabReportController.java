@@ -40,6 +40,16 @@ public class LabReportController {
         return null;
     }
 
+    @GetMapping(value = "/html")
+    public String generateHTML() throws IOException {
+        try {
+            return labReportService.generateHTML();
+        } catch (Exception ex) {
+            log.error("error : {}", ex.getMessage(), ex);
+        }
+        return null;
+    }
+
     @GetMapping(value = "/hospital/details")
     public Mono<GlobalResponse<MasterHospitalCommonDto>> getCommonDetailsByHospitalCode(
         @RequestParam("hospitalCode") String hospitalCode) {

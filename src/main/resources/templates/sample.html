@@ -2,17 +2,71 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="shortcut icon" th:href="@{static/assets/favicon.ico}" />
+    <link rel="shortcut icon" th:href="@{static/assets/favicon.ico}"/>
     <title>SAMPLE PDF</title>
     <link rel="stylesheet" type="text/css" th:href="@{static/css/common.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{static/css/header.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{static/css/patient-details.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{static/css/footer.css}"/>
+
+    <style>
+        .report-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.8cm;
+        }
+
+        .report-table th,
+        .report-table td {
+            border: 0.03cm solid black;
+            padding: 0.32cm;
+            text-align: left;
+        }
+    </style>
 </head>
-<body>
+<body onload="dynamicDate()">
 <div th:replace="~{fragments/header :: header}"></div>
 <h1 class="t-title">OPD Report</h1>
 <div th:replace="~{fragments/patient-details :: patient-details}"></div>
 <div th:replace="~{fragments/footer :: footer}"></div>
-</body>
-</html>
+<th:block th:each="iteration : ${#numbers.sequence(1, 10)}">
+    <!-- BP Report Table -->
+    <div class="report-details" style="page-break-inside: avoid;">
+        <h3 class="report-title">BP Report</h3>
+        <table class="report-table">
+            <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td th:text="Something">"Something"</td>
+                <td th:text="Anything">"Anything"</td>
+                <td th:text="Nothing">"Nothing"</td>
+            </tr>
+            <tr>
+                <td th:text="Something">"Something"</td>
+                <td th:text="Anything">"Anything"</td>
+                <td th:text="Nothing">"Nothing"</td>
+            </tr>
+            <tr>
+                <td th:text="Something">"Something"</td>
+                <td th:text="Anything">"Anything"</td>
+                <td th:text="Nothing">"Nothing"</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>
+
+</body>X
+<script>
+    function dynamicDate() {
+        const lastPageDate = document.querySelector(".last-page-date");
+        lastPageDate.style.display = "block";
+    }
+</script>
+</html>X
