@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>SAMPLE PDF</title>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/common.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/header.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/footer.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/opd-report.css}" />
+		<style>  
+    .separator-line {
+      border-top: 1px solid black;
+      /* Horizontal line */
+      margin-top: 20px;
+      /* Spacing */
+    }
+  </style>
+	</head>
+	<body>
+		<div th:replace="~{fragments/header :: header}"></div>
+		<h1 class="t-title">OPD Report</h1>
+		<div th:replace="~{fragments/opd-report :: opd-report}"></div>
+		<div class="separator-line"></div>
+		<!-- Complaints Info Starts Here -->
+		<table style="width:100%; margin-top: 20px;">
+			<tr>
+				<td style="font-weight: bold; color: #000;">Complaints:</td>
+				<td style="padding-right:350px;">nikhil is the best 
+					<b>(Right Eye)</b>
+				</td>
+			</tr>
+		</table>
+		<!-- Complaints Info End Here -->
+		<!-- OPthalmic Info Starts Here  -->
+		<table style="width:100%; margin-top: 20px;">
+			<tr>
+				<td style="font-weight: bold; color: #000;">Opthalmic</td>
+				<td style="padding-left:15px;">NEW_OP_TEST 
+					<b>(Right Eye)</b>,Recurrent Episode of Pain Redness 
+					<b>(Red Eye)</b>
+				</td>
+			</tr>
+			<tr style="font-weight: bold; color: #000;">History:</tr>
+		</table>
+		<!-- OPthalmic Info End Here  -->
+		<!-- Allergy History Start Here  -->
+		<table style="width:100%; margin-top: 20px;">
+			<tr>
+				<td style="font-weight: bold; color: #000;">Allergy</td>
+				<td style="padding-right:320px;">Masroom</td>
+			</tr>
+			<tr style="font-weight: bold; color: #000;">
+      History:
+    </tr>
+		</table>
+		<table style="width:100%; margin-top: 20px;">
+			<tr>
+				<td style="font-weight: bold; color: #000">Medical</td>
+				<td style="padding-right:265px;">Kidney Tranplant</td>
+			</tr>
+			<tr style="font-weight: bold; color: #000;">
+      History:
+    </tr>
+		</table>
+		<table style="width:100%; margin-top: 20px;">
+			<tr>
+				<td style="font-weight: bold; color: #000;">Family</td>
+				<td style="padding-right:260px;">PACS (MOTHER)</td>
+			</tr>
+			<tr style="font-weight: bold; color: #000;" >
+      History:
+    </tr>
+		</table>
+		<table style="width:100%; margin-top: 20px;">
+			<tr>
+				<td style="font-weight: bold; color: #000;">General</td>
+				<td  style=" padding-right: 150px; ">
+					<b>BP :</b>  110
+				</td>
+				<td  style=" padding-right: 100px; ">
+					<b>Urine Sugar :</b>  120
+				</td>
+				<td  style=" padding-left: -200px; ">
+					<b>TVS :</b>  130 
+				</td>
+			</tr>
+			<tr >
+				<td style="font-weight: bold; color: #000; ">Examination:</td>
+				<td style=" padding-right: 100px; ">
+					<b>RS :  </b> 140
+				</td>
+				<td  style=" padding-right: 100px; ">
+					<b> Urea :</b> 150
+				</td>
+				<td>
+					<b> Blood Sugar :</b> 160
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td >
+					<b>HB Alc :</b>  170
+				</td>
+				<td style=" padding-right: 50px; ">
+					<b>Cerum Ceraninine : </b> 180
+				</td>
+			</tr>
+		</table>
+		<table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+			<tr>
+				<td class="title-col" style="font-weight: bold; color: #000; padding-top: 8px; vertical-align: top;">
+        Vision 
+					<br /> Reading:
+      
+				</td>
+				<td style="padding: 10px; width: 300%;">
+					<table style="text-align: center; width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; padding: 10px;"></th>
+							<th colspan="3" style="border: 1px solid #ccc; padding: 10px;">Distance vision</th>
+							<th colspan="2" style="border: 1px solid #ccc; padding: 10px;">Near vision</th>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; padding: 10px;">Eye</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">UCDVA</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">BCDVA</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">PH</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">UCNVA</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">BCNVA</th>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<td style="border: 1px solid #ccc; padding: 10px;">Right</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">6/6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">6/6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">6/6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">N6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">N6</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<td style="border: 1px solid #ccc; padding: 10px;">Left</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">6/6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">6/6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">6/6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">N6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">N6</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<div style="page-break-before: always;"></div>
+		<table style=" border-collapse: collapse;width: 100%;margin-top: 30px;">
+			<tr>
+				<td class="title-col" style="font-weight: bold; color: #000;padding-top: 8px;  vertical-align: top; width: 10%;">
+        Spectacle 
+					<br /> Correction 
+					<br /> Undialted:
+      
+				</td>
+				<td style="padding: 10px; width:90%;">
+					<table style="text-align: center;width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
+						<tr style="border: 1px solid rgb(172, 172, 172);">
+							<th style="border: 1px solid #ccc;width: 8%; "></th>
+							<th colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;">Distance vision</th>
+							<th colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;">Near vision</th>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; padding: 10px;"></th>
+							<th style="border: 1px solid #ccc; padding: 10px;">SPH</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">CYL</th>
+							<th style="border: 1px solid #ccc; padding: 1px;">ASIX</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">V/A</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">SPH</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">CYL</th>
+							<th style="border: 1px solid #ccc; padding: 1px;">ASIX</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">V/A</th>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<td style="border: 1px solid #ccc; padding: 10px;">D.V</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<td style="border: 1px solid #ccc; padding: 10px;">N.V</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">+2</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">+2</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; ">Add</th>
+							<td colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12;">11</td>
+							<td colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;">11</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; ">Remark</th>
+							<td colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;">11</td>
+							<td colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;">11</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="padding-left: 10px;">Material</td>
+			</tr>
+		</table>
+		<table style=" border-collapse: collapse;width: 100%; padding-top: 8px; margin-top: 30px;">
+			<tr>
+				<td class="title-col" style="font-weight: bold; color: #000; vertical-align: top; ">
+        Spectacle 
+				 Correction 
+				 Cyclopagic:
+      
+				</td>
+				<tr style="border: 1px solid #ccc;width: 100%; margin-left: -15px;">
+					<th style="border: 1px solid #ccc;width: 10%; "></th>
+					<th colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;" align="center">Right Eye</th>
+					<th colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%; " align="center">Left Eye</th>
+				</tr>
+			</tr>
+		</table>
+		<table style=" border-collapse: collapse;width: 100%; margin-top: 50px;">
+			<tr>
+				<td  style="font-weight: bold; color: #000; padding-top: 8px; vertical-align: top;  ">
+        Eye 
+					<br /> Examination: 
+				</td>
+				<td style="padding: 10px; width:110%; ">
+					<table style="text-align: center;width: 103%;margin-left: -15px; border-collapse: collapse; border: 1px solid rgb(130, 130, 130);">
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc;width: 8%; ">Eye Part</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Sub Eye Part</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Right Eye</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Left Eye</th>
+						</tr>
+						<tr style="border: 1px solid #ccc; text-align: left;">
+							<td style="border: 1px solid #ccc; padding: 10px;">Anterior</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">Normal</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">--</td>
+							<td style="border: 1px solid #ccc; padding: 1px;">--</td>
+						</tr>
+						<tr style="border: 1px solid #ccc; text-align: left;">
+							<td style="border: 1px solid #ccc; padding: 10px;">Posterior</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">Normal</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">--</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">--</td>
+						</tr>
+						<tr style="border: 1px solid #ccc; text-align: left;">
+							<td style="border: 1px solid #ccc; padding: 10px;">Lens</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">Aphakia</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">Right E</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">Left E</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table style=" border-collapse: collapse;width: 100%; margin-top: 10px;">
+			<tr>
+				<td class="title-col" style="font-weight: bold; color: #000;padding-top: 8px; vertical-align: top; ">
+        AR
+					<br /> Refraction:
+      
+				</td>
+				<td style="padding: 10px; ">
+					<table style="text-align: center;width: 102%;margin-left: -10px; border-collapse: collapse; border: 1px solid #ccc;">
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc;width: 8%; "></th>
+							<th colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;">Right Eye</th>
+							<th colspan="4" style="border: 1px solid #ccc; padding: 10px;width: 12%;">Left Eye</th>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; padding: 10px;"></th>
+							<th style="border: 1px solid #ccc; padding: 10px;">SPH</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">CYL</th>
+							<th style="border: 1px solid #ccc; padding: 1px;">Axis</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">CYCL</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">SPH</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">CYL</th>
+							<th style="border: 1px solid #ccc; padding: 1px;">Axis</th>
+							<th style="border: 1px solid #ccc; padding: 10px;">CYCL</th>
+						</tr>
+						<tr style="border: 1px solid #ccc; text-align: left;">
+							<th style="border: 1px solid #ccc; padding: 10px;">Undilated</th>
+							<td style="border: 1px solid #ccc; padding: 10px;">11</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">12</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">13</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">14</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">19</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">20</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">21</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">22</td>
+						</tr>
+						<tr style="border: 1px solid #ccc; text-align: left;">
+							<th style="border: 1px solid #ccc; padding: 10px;">Dilated</th>
+							<td style="border: 1px solid #ccc; padding: 10px;">15</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">16</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">17</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">18</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">23</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">24</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">25</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">26</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<div style="page-break-before: always;"></div>
+		<table style=" border-collapse: collapse;width: 100%; margin-top: 40px;">
+			<tr>
+				<td  style="font-weight: bold; color: #000; padding-top: 6px;  vertical-align: top;">
+        Preliminary 
+					<br/> Eye 
+					<br /> Examination 
+				</td>
+				<td style="padding: 10px; ">
+					<table style="text-align: center;width: 102%;margin-left: -7px; border-collapse: collapse; border: 1px solid #ccc;">
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc;width: 8%; ">Eye</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">NCT</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">GAT</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">CCT</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">CIOP</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">ICT</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Angel</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Color Vision</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Pupil</th>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; ">Right Eye</th>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">2</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">3</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">4</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">5</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">6</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">7</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">8</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc; padding: 10px;width: 20%;">Left Eye</th>
+							<td style="border: 1px solid #ccc; padding: 10px;">8</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">9</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">10</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">11</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">12</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">13</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">14</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">15</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table style=" border-collapse: collapse;width: 100%; margin-top: 15px;">
+			<tr>
+				<td class="title-col" style="font-weight: bold; color: #000;  vertical-align: top; width: 10%;">
+        Lacrimal
+					<br /> Syringing: 
+				</td>
+				<td style=" width:55%;">
+					<table style="text-align: center;width: 103%; margin-left: -18px;  border-collapse: collapse; border: 1px solid #ccc;">
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc;width: 8%; ">Eye </th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Lacrimalsyringing</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Impression</th>
+						</tr>
+						<tr style="border: 1px solid #ccc; text-align: left;">
+							<th style="border: 1px solid #ccc; padding: 10px;">Right Eye</th>
+							<td style="border: 1px solid #ccc; padding: 10px;">Its testing</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">left imp</td>
+						</tr>
+						<tr style="border: 1px solid #ccc; text-align: left;">
+							<th style="border: 1px solid #ccc; padding: 10px;">Left Eye</th>
+							<td style="border: 1px solid #ccc; padding: 10px;">left wala testing</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">rigt imp</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table style=" border-collapse: collapse; margin-top: 10px;">
+			<tr>
+				<td class="title-col" style="font-weight: bold; color: #000; padding-top: 8px;  vertical-align: top; width: 10%;">
+        AR 
+					<br /> Keratomerty: 
+				</td>
+				<td style="padding: 10px; width:90%;">
+					<table style="text-align: center;width: 103%; margin-left: -10px; border-collapse: collapse; border: 1px solid #ccc;">
+						<tr style="border: 1px solid #ccc;">
+							<th style="border: 1px solid #ccc;width: 8%; ">Eye </th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Type</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">K1</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Axis</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">K2</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Axis</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Cyl</th>
+							<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Axis</th>
+						</tr>
+						<tr style="border: 1px solid #ccc;text-align: left;">
+							<td style="border: 1px solid #ccc; padding: 10px; width: 20%;">Right Eye  </td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;text-align: left;">
+							<td style="border: 1px solid #ccc; padding: 10px; width: 15%;">Left Eye</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;text-align: left;">
+							<td style="border: 1px solid #ccc; padding: 10px;">Right Eye</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+						</tr>
+						<tr style="border: 1px solid #ccc;text-align: left;">
+							<td style="border: 1px solid #ccc; padding: 10px;">Left Eye</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+							<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table style="margin-top: 20px;">
+			<tr>
+				<td style="font-weight: bold; color: #000;   vertical-align: top; width: 10%;">
+        Diagnosis:</td>
+				<td style="border: 1px solid; border-radius: 5px">
+					<ul>
+						<li>This is Data </li>
+						<li>This is Data </li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+		<table style="margin-top: 20px;">
+			<tr>
+				<td  style="font-weight: bold; color: #000; margin-top: 30px; vertical-align: top; width: 10%;">
+        Clinical 
+					<br/>Advice:
+				</td>
+				<ul>
+					<li>This is Data </li>
+					<li>this is big data
+          </li>
+				</ul>
+			</tr>
+		</table>
+		<table style=" border-collapse: collapse;width: 100%;   ">
+			<tr  style="font-weight: bold; color: #000;  vertical-align: top; width: 10%;">
+       Medicine: </tr>
+			<table style="text-align: center;width: 100%;margin-top: 10px; border-collapse: collapse; border: 1px solid #ccc;">
+				<tr style="border: 1px solid #ccc;">
+					<th style="border: 1px solid #ccc;width: 8%; ">Name</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Strength</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Dosage</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Instruction</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Start at </th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">End at</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Quantity</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Eye</th>
+				</tr>
+				<tr style="border: 1px solid #ccc;text-align: left;">
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+				</tr>
+				<tr style="border: 1px solid #ccc;">
+					<td style="border: 1px solid #ccc; padding: 10px;">+2</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+				</tr>
+				<tr style="border: 1px solid #ccc;">
+					<td style="border: 1px solid #ccc; padding: 10px;">+2</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+				</tr>
+				<tr style="border: 1px solid #ccc;">
+					<td style="border: 1px solid #ccc; padding: 10px;">+2</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+				</tr>
+			</table>
+		</table>
+		<div style="page-break-before: always;"></div>
+		<table style=" border-collapse: collapse;width: 100%;margin-top: 30px;">
+			<tr class="title-col" style="font-weight: bold; color: #000;  vertical-align: top; width: 10%;">
+      Taper Medicine: </tr>
+			<table style="text-align: center;width: 100%; margin-top: 20px; border-collapse: collapse; border: 1px solid #ccc;">
+				<tr style="border: 1px solid #ccc;">
+					<th style="border: 1px solid #ccc;width: 8%; ">Name</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Strength</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Dosage</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Instruction</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Start at </th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">End at</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Quantity</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Eye</th>
+				</tr>
+				<tr style="border: 1px solid #ccc;">
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+				</tr>
+			</table>
+		</table>
+		<table style=" border-collapse: collapse;width: 100%; margin-top: 20px">
+			<tr style="font-weight: bold; color: #000; padding: 10px; vertical-align: top; width: 10%;">
+     Current Medicine: </tr>
+			<table style="text-align: center;width: 100%; margin-top: 15px; border-collapse: collapse; border: 1px solid #ccc;">
+				<tr style="border: 1px solid #ccc;">
+					<th style="border: 1px solid #ccc;width: 8%; ">Eye Part</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Distance vision</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Near vision</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Near vision</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Near vision</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Near vision</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Near vision</th>
+					<th  style="border: 1px solid #ccc; padding: 10px;width: 12%;">Near vision</th>
+				</tr>
+				<tr style="border: 1px solid #ccc;">
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+				</tr>
+				<tr style="border: 1px solid #ccc;">
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+					<td style="border: 1px solid #ccc; padding: 10px;">1</td>
+				</tr>
+			</table>
+		</table>
+		<!-- OPD Report Additional Information -->
+		<div class="separator-line"></div>
+		<div th:replace="~{fragments/footer :: footer}"></div>
+	</body>
+</html>

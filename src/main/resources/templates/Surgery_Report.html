@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SAMPLE PDF</title>
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/common.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/header.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/footer.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/opd-report.css}" />
+    <style>
+        .separator-line {
+            border-top: 1px solid black;
+            /* Horizontal line */
+            margin-top: 20px;
+            /* Spacing */
+        }
+    
+        
+        .title-col{
+            font-weight: bold;
+            font-size: 14px;
+            padding-left: 15px;
+            color: rgb(43, 43, 43);
+            width: 200px;
+           
+        }
+        .table{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div th:replace="~{fragments/opd-report :: opd-report}"></div>
+    <div class="separator-line"></div>
+    <table style="width: 100%; text-align: center; margin-top: 30px; font-size: 20px;">
+        <tr>
+            Discharge Summary
+        </tr>
+    </table>    
+
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Date Of Admission:</td>
+            <td class="value-col" >---
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%;">
+        <tr>
+            <td class="title-col" > </td>
+             <td  class="value-col" >18/7/2023
+            </td>
+        </tr>
+    </table>
+
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Date Of Discharge:</td>
+            <td class="value-col">---
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Care Unit:</td>
+            <td style="padding-right: 100px ;">DAY_CARE
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%;">
+        <tr>
+            <td class="title-col">Room Number:</td>
+            <td class="value-col">12
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%;">
+        <tr>
+            <td class="title-col">Bed Number:</td>
+            <td class="value-col">3
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Anesthesist:</td>
+            <td class="value-col">DR. doctor das
+            </td>
+        </tr>
+    </table>
+    <table  class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Type Of Anesthesia:</td>
+            <td class="value-col">LOCAL
+            </td>
+        </tr>
+    </table>
+    <table class="table" style=" border-collapse: collapse;width: 100%; ">
+        <tr>
+            <td  class="title-col" style="padding-bottom: 35px;">Vitals:
+            </td>
+            <td style="padding: 10px; width:68.5%; ">
+                <table style="text-align: center;width: 100%;margin-left: -15px; border-collapse: collapse; border: 1.2px solid rgb(38, 38, 38);">
+                    <tr style="border: 1.2px solid rgb(38, 38, 38);">
+                        <th style="border: 1.2px solid rgb(38, 38, 38);width: 8%;">Pulse</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;width: 8%;">BP</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;width: 8%;">CSV</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;width: 8%;">RS</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;width: 8%;">ECG</th>
+                    </tr>
+                    <tr style="border: 1.2px solid rgb(38, 38, 38); text-align: center;">
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;">Anterior</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;">Normal</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;">--</td>
+                        <td style=" border: 1.2px solid rgb(38, 38, 38); padding:5px;">--</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding:5px;">--</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table style=" border-collapse: collapse;width: 100%; ">
+        <tr>
+            <td style="font-weight: 600; padding-left: 6px; vertical-align: top;  ">
+            </td>
+            <td style="padding: 10px; width:68.5%; ">
+                <table
+                    style="text-align: center;width: 100%;margin-left: -15px; border-collapse: collapse; border: 1.2px solid rgb(38, 38, 38);">
+                    <tr style="border: 1.2px solid rgb(38, 38, 38);">
+                        <th style="border: 1.2px solid rgb(38, 38, 38);width: 8%;">Urine Sugar</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38);width: 12%;">Blood Sugar</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); width: 8%;">RBS</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38);width: 8%;">SPO <sub>2</sub></th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38);width: 8%;">PA</th>
+                    </tr>
+                    <tr style="border: 1.2px solid rgb(38, 38, 38); text-align: center;">
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;">Anterior</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;">Normal</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;">--</td>
+                        <td style=" border: 1.2px solid rgb(38, 38, 38); padding:5px;">--</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding:5px;">--</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%;">
+        <th style="font-weight: bold ;font-size:16px;">Present Medications</th>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Insuline:</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Anticoagulant:</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Antithypersentive:</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+    <table  class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Others:</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+  
+    <table style="width:100%;">
+        <tr style="font-weight: bold ;font-size:16px;">Pre-Op Assesment</tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">IOL Name:</td>
+            <td class="value-col">New
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Item Code:</td>
+            <td class="value-col">Nothing
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Serial:</td>
+            <td class="value-col">2362
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Diapter:</td>
+            <td class="value-col">97
+            </td>
+        </tr>
+    </table>
+     <div style="page-break-before: always;"></div>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col" >Systemic Status:</td>
+            <td style="padding-right: 110px ;">w
+            </td>
+        </tr>
+    </table>
+   
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col" >Drug Allergies:</td>
+            <td class="value-col">w
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width: 100%;" >
+        <tr>
+            <td class="title-col">Medical History :</td>
+            <td class="value-col">s
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width: 100%;" >
+        <tr>
+            <td class="title-col">Instruction:</td>
+            <td class="value-col">d
+            </td>
+        </tr>
+    </table>
+    <table class="table" style=" border-collapse: collapse;width: 100%;">
+        <tr>
+            <th class="title-col" style=" padding-left: 15px; vertical-align: top;  ">Medicine:
+            </th>
+        
+            <td style="padding: 10px; width:70%; ">
+                <table
+                    style="text-align: center;width: 100%;margin-left: 10px; border-collapse: collapse; border: 1.2px solid rgb(38, 38, 38);">
+                    <tr style="border: 1.2px solid rgb(38, 38, 38);">
+                        <th style="border: 1.2px solid rgb(38, 38, 38);width: 8%; font-size: 14px;">Name</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38);width: 8%;font-size: 14px;">Instructions</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); width: 8%;font-size: 14px;">Quantity</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;width: 8%;font-size: 14px;">Duration</th>
+                        <th style="border: 1.2px solid rgb(38, 38, 38); padding: 5px;width: 8%;font-size: 14px;">Eye</th>
+                    </tr>
+                    <tr style="border: 1.2px solid rgb(38, 38, 38); text-align: center;">
+                        <td style="border: 1.2px solid rgb(38, 38, 38); padding: 5px; width: 12%;font-size: 14px;">APRACLONIDINE</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38);padding: 5px; width: 12%;font-size: 14px;">--</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38);padding: 5px;width: 12%;font-size: 14px;">1</td>
+                        <td style=" border: 1.2px solid rgb(38, 38, 38);padding: 5px; width: 12%;font-size: 14px;">2</td>
+                        <td style="border: 1.2px solid rgb(38, 38, 38);padding: 5px; width: 20%;font-size: 14px;">(Right Eye)</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table style="width:100%;">
+        <tr style="font-weight: bold ; padding-left: -10px; font-size:16px;">Discharge Note</tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Action Plan :</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+    <table class="table" style="width:100%; ">
+        <tr>
+            <td class="title-col">Follow Up:</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%;">
+        <tr style="font-weight: bold ; padding-left: -10px; font-size:16px;">Discharge Note</tr>
+    </table>
+    <table class="value-col">
+        <tr>
+            <td class="title-col">Condition on Discharge:</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+    <table class="table"  style="width:100%; margin-bottom: 10px;">
+        <tr>
+            <td class="title-col"  >Advice:</td>
+            <td class="value-col">--
+            </td>
+        </tr>
+    </table>
+    <table>
+        <table style="width:100%;">
+            <tr style="font-weight: bold ; padding-left: -10px; font-size:16px;padding-top: 10px;">Consultant Consent Taken:</tr>
+        </table>
+        <table class="table" style="width:100%;">
+            <tr>
+                <td class="title-col">Place to Visit:</td>
+                <td class="value-col">FlexEHR
+                </td>
+            </tr>
+        </table>
+        <table class="table" style="width:100%;">
+            <tr>
+                <td class="title-col">For Urgent Care:</td>
+                <td > <span style="border: 1px solid black; padding-left: 5px ; padding-right: 5px;"> 912928439</span>
+                </td>
+                
+            </tr>
+        </table>
+    </table>
+
+    <table style="width: 110%; margin-top:30px; font-size: 14px;">
+        <tr>
+            <td style="margin-right:100px;">Recieved Discharge Summary/Bill by</td>
+            <td>RelationShip____________________</td>
+    
+        </tr>
+        <tr style="padding-left: 10px;">patient/Attandantsignature____________________</tr>
+    </table>
+
+    <table style="width: 100%; margin-top: 30px ;font-size: 14px; text-align: center;">
+        <tr>Consulation With in 6 weeks will not be chargeble , thereafter normal charges will be
+            Applicable </tr>
+    </table>
+
+    <table style="width: 100% ; margin-top: 20px;">
+
+        <tr> 
+              <td></td>
+             <td></td>
+             
+            <td style="width: 90px; border: 1px solid Black; padding: 25px; "></td>
+            <td></td>
+        </tr>
+</table>
+ <table style=" width: 100%; font-size: 15px;">       
+        <tr >
+            <td>Signature Of Patient /Guardian if Minor </td>
+            <td style="padding-right:100px;">Dr Vivekanand (KA12345)</td>
+        </tr>
+        <tr>
+            <td>Date:</td>
+            <td>Date:</td>
+        </tr>
+
+    </table>
+    <table style="width: 100%; margin-top: 30px; ">
+
+        <tr style="border: 1px solid black; width: 100%; vertical-align: top;">
+            <td style="border: 1px solid black; width: 100%; height: 100px; padding: 5px; "> Note
+
+            </td>
+        </tr>   
+    </table>
+
+    <!-- OPD Report Additional Information -->
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>

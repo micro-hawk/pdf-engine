@@ -44,6 +44,7 @@ public class LabReportServiceImpl implements LabReportService {
         file.deleteOnExit();
 
         return Files.readAllBytes(file.toPath());
+        
     }
 
     private Context getContext() {
@@ -70,10 +71,11 @@ public class LabReportServiceImpl implements LabReportService {
         context.setVariable("PAYMENT_MODE","ONLINE");
         context.setVariable("TRANSACTION_ID","09932758793");
         context.setVariable("RECEPTION_NAME","Ritik Pal");
+        context.setVariable("APPT_DATE", "6/9/2023");
         return context;
     }
 
     private String loadAndFillTemplate(Context context) {
-        return templateEngine.process("hospital", context);
+        return templateEngine.process("Surgery_Report", context);
     }
 }
